@@ -14,6 +14,9 @@ exports.run = async function (Memer, msg, args) {
   if (!args[0]) {
     return msg.reply(`Specify a command to disable, or multiple.\n\nExample: \`${gConfig.prefix} disable meme trigger shitsound\` or \`${gConfig.prefix} disable meme\``)
   }
+  if (args[0]=== "enable") {
+    return msg.reply('You can\'t disable this command.:waitwhat:')
+  }
   if (args.some(cmd => !Memer.cmds.has(cmd))) {
     return msg.reply(`The following commands are invalid: \n\n${args.filter(cmd => !Memer.cmds.has(cmd)).map(cmd => `\`${cmd}\``).join(', ')}\n\nPlease make sure all of your commands are valid and try again.`)
   }
